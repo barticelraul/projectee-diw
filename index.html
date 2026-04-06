@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Kebab | Sabor Real</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ── HEADER ── -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Dream <span>KEBAB</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="cart-container">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ── HERO ── -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>¿Hambre de algo épico?</h1>
+            <p>Los mejores Kebabs, Tacos Franceses y Pizzas de la zona.</p>
+            <a href="#menu" class="btn-primary">Ver Menú</a>
+        </div>
+    </section>
+
+    <!-- ── MENÚ ── -->
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Nuestro Menú</h2>
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="filterMenu('todos')">Todos</button>
+            <button class="tab-btn" onclick="filterMenu('kebab')">Kebabs</button>
+            <button class="tab-btn" onclick="filterMenu('tacos')">Tacos</button>
+            <button class="tab-btn" onclick="filterMenu('pizza')">Pizzas</button>
+        </div>
+        <div class="menu-grid" id="menu-container"></div>
+    </section>
+
+    <!-- ── NOSOTROS ── -->
+    <section id="nosotros" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Nuestra Pasión</h2>
+                <p>En <strong>Dream Kebab</strong>, creamos experiencias. Usamos ingredientes frescos y recetas tradicionales con un toque moderno.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Principal, Local 0.</p>
+            </div>
+            <div class="about-image">
+                <video controls src="videoplayback.mp4"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── AUDIO ── -->
+    <section class="audio-section">
+        <div class="audio-card">
+            <div class="audio-icon"><i class="fas fa-music"></i></div>
+            <div class="audio-info">
+                <h3>Podcast</h3>
+                <p>El ambiente sonoro de Dream Kebab</p>
+            </div>
+            <audio controls class="audio-player">
+                <source src="audio-nosotros.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </section>
+
+    <!-- ── CONTACTO ── -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-card">
+            <h2>Contáctanos</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email" required>
+                <textarea placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ── AUDIO (bajo CONTACTO) ── -->
+    <section class="audio-section">
+        <div class="audio-card">
+            <div class="audio-icon"><i class="fas fa-headphones"></i></div>
+            <div class="audio-info">
+                <h3>Mensaje de Bienvenida</h3>
+                <p>Escucha un mensaje especial de nuestro equipo</p>
+            </div>
+            <audio controls class="audio-player">
+                <source src="audio-contacto.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </section>
+
+    <!-- ── UBICACIÓN ── -->
+    <section id="ubicacion" class="location-section">
+        <div class="location-header">
+            <h2>Ven a visitarnos <span>📍</span></h2>
+            <p>Te esperamos en Tarragona — el kebab más épico te está esperando</p>
+        </div>
+
+        <div class="location-pills">
+            <div class="pill">
+                <i class="fas fa-map-marker-alt"></i>
+                Calle Principal, Local 0 — Tarragona
+            </div>
+            <div class="pill">
+                <i class="fas fa-clock"></i>
+                Lun–Dom · 12:00 – 24:00
+            </div>
+            <div class="pill">
+                <i class="fas fa-phone"></i>
+                +34 600 000 000
+            </div>
+        </div>
+
+        <div class="map-card">
+            <!--
+                ⚠️ Sustituye el src por tu embed real de Google Maps:
+                maps.google.com → busca tu dirección → Compartir → Incorporar mapa → copia el src del iframe
+            -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47944.23822348587!2d1.1218305!3d41.1188827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3fb3291d31957%3A0xe0c87c3948eb8d6e!2sTarragona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-pin-label">
+                <i class="fas fa-fire"></i>
+                Dream Kebab — Tu parada obligatoria
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CARRITO (popup) ── -->
+    <div id="cart-modal" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close-popup" onclick="toggleCart()">&times;</span>
+            <h3><i class="fas fa-shopping-bag"></i> Tu Pedido</h3>
+            <hr>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="total-container">
+                    <span>Total:</span>
+                    <span><span id="total-price">0.00</span>€</span>
+                </div>
+                <button class="btn-checkout-popup" onclick="checkout()">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="socials">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <p>&copy; 2024 Dream Kebab - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
