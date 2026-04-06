@@ -78,7 +78,7 @@ function _renderCarousel(id) {
     const img = document.querySelector(`.carousel[data-id="${id}"] .carousel-img`);
     if (img) {
         img.classList.remove('fade-in');
-        void img.offsetWidth; // reflow para reiniciar animación
+        void img.offsetWidth;
         img.src = producto.imgs[current];
         img.classList.add('fade-in');
     }
@@ -87,6 +87,10 @@ function _renderCarousel(id) {
     document.querySelectorAll(`.carousel[data-id="${id}"] .dot`).forEach((dot, i) => {
         dot.classList.toggle('active', i === current);
     });
+
+    // Actualizar contador
+    const counter = document.querySelector(`.carousel-counter[data-id="${id}"]`);
+    if (counter) counter.textContent = `${current + 1} / ${producto.imgs.length}`;
 }
 
 // ── MENÚ ────────────────────────────────────────────────────
@@ -111,6 +115,7 @@ function displayMenu(items) {
                     <i class="fas fa-chevron-right"></i>
                 </button>
                 <div class="carousel-dots">${dotsHTML}</div>
+                <span class="carousel-counter" data-id="${item.id}">1 / ${item.imgs.length}</span>
             </div>
             <h3>${item.nombre}</h3>
             <p>${item.precio.toFixed(2)}€</p>
